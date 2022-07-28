@@ -6,7 +6,8 @@ module.exports = {
   daisyui: {
     themes: [
       // "dark",
-      "cupcake",
+      // "cupcake",
+      "bumblebee",
       
     ],
   },

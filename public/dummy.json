@@ -1,0 +1,30 @@
+[
+    {
+        "_id": 1,
+        "date": "01-01-2022",
+        "amount": 3400,
+        "payment_mode": "cash",
+        "remark": "shan"
+    },
+    {
+        "_id": 2,
+        "date": "20-07-2022",
+        "amount": 3400,
+        "payment_mode": "card",
+        "remark": "shan"
+    },
+    {
+        "_id": 3,
+        "date": "02-05-2022",
+        "amount": 3400,
+        "payment_mode": "cash",
+        "remark": "shan"
+    },
+    {
+        "_id": 4,
+        "date": "20-02-2022",
+        "amount": 3400,
+        "payment_mode": "card",
+        "remark": "shan"
+    }
+]

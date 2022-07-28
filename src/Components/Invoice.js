@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from 'react-hook-form';
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast';
 
 const Invoice = () => {
   const {register, handleSubmit} = useForm();
   const [dummy, setDummy] = useState([]);
   const onSubmit = (data) => {
-    if(data === 1){
-      toast.success("The item has benn added successfully!");
+    if (onSubmit === true) {
+      toast.success('The item has been added successfully!');
+      console.log(data.status);
     }
     const date = data.date;
     const amount = data.amount;
@@ -27,18 +28,19 @@ const Invoice = () => {
   }, []);
 
   return (
-    <div className="container lg:px-80 lg:py-16 sm:w-auto w-full text-left">
-      <h6 className="underline">Recipient Details</h6>
-      <div className="w-auto">
+    <div className="container lg:px-80 py-10 sm:w-auto w-full text-left">
+      <h1 className="text-center text-3xl font-bold">Task Onito</h1>
+      <h6 className="underline font-bold">Recipient Details</h6>
+      <div className="w-3/4 mt-5 mb-9">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-3">
+          <div className="mb-3 grid grid-cols-2">
             <label htmlFor="">
               Date<span className="text-red-600">*</span>{' '}
             </label>
             <input
               type="date"
               placeholder="Enter date"
-              className="input input-bordered input-sm w-full max-w-max mt-2"
+              className="input input-bordered input-sm "
               id="floatingInput"
               //   value={}
               {...register('date')}
@@ -46,7 +48,7 @@ const Invoice = () => {
             />
           </div>
 
-          <div className="mb-3">
+          <div className="mb-3 grid grid-cols-2">
             <label htmlFor="">
               Amount<span className="text-red-600">*</span>{' '}
             </label>
@@ -54,48 +56,46 @@ const Invoice = () => {
               type="number"
               placeholder="Enter Amount (in INR)"
               //   value={}
-              className="input input-bordered input-sm w-full max-w-max mt-2"
+              className="input input-bordered input-sm"
               id="floatingInput"
               {...register('amount')}
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3 grid grid-cols-2">
             <label htmlFor="">
               Payment Mode<span className="text-red-600">*</span>{' '}
             </label>
-            <select
-              {...register('payment_mode')}
-              class="input input-bordered input-sm w-full max-w-xs mt-2"
-            >
+            <select {...register('payment_mode')} className="input input-bordered input-sm">
               <option>cash</option>
               <option>card</option>
             </select>
           </div>
 
-          <div className="mb-3">
+          <div className="mb-3 grid grid-cols-2">
             <label htmlFor="">Remark </label>
             <input
               type="text"
               placeholder="Remark"
-              className="input input-bordered input-sm w-full max-w-xs mt-2"
+              className="input input-bordered input-sm"
               id="floatingInput"
               {...register('remark')}
             />
           </div>
 
-          <div className="mb-3 text-center">
-            <button class="gap-2 btn btn-outline btn-error rounded- px-2" value="Cancel">
-            Cancel
+          <div className="mb-3 mt-5 text-right">
+            <button className="btn btn-outline btn-error rounded- px-6" value="Cancel">
+              Cancel <br />
+              (ESC)
             </button>
-            <button class="gap-2 btn btn-success px-2 ml-2 bg-green-500" value="Submit">
-              Submit
-              
+            <button className="btn btn-success  px-6 ml-10" value="Submit">
+              Submit <br />
+              (ꕤ S)
             </button>
           </div>
         </form>
       </div>
-
+      <p className="text-2xl font-bold">Total Array length: {dummy.length}</p>
       <div className="mt-5">
         <table className="table w-full">
           <thead>

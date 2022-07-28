@@ -80,7 +80,33 @@ const Invoice = () => {
       </form>
       </div>
       
-      
+      <div className='mt-5'>
+      <table className="table w-full">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Payment Mode</th>
+          <th>Remark</th>
+          {/* <th>Action</th> */}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          dummy.map((item, key) => (
+            <tr key={key}>
+              <th>{key + 1}</th>
+              <td className=" capitalize">{item.date}</td>
+              <td>{item.amount} INR</td>
+              <td>{item.payment_mode}</td>
+              <td>{item.remark}</td>
+              {/* <td><button className='btn btn-primary btn-sm'>Delete</button></td> */}
+            </tr>
+          ))}
+      </tbody>
+      </table> 
+      </div>
       
     </div>
   );
